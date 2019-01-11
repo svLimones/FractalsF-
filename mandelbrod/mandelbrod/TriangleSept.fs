@@ -4,7 +4,7 @@ open System
 open System.Drawing
 open System.Windows.Forms
 
-let createChaosImage size iterCount =
+let createChaosImage (size, iterCount) =
     let ax = size/2 
     let ay = 0
     let bx = 0

@@ -27,11 +27,11 @@ let colorize c =
     let b = (8 * c) % 255
     Color.FromArgb(r,g,b)
 
-let createImage (s, mx, my, iter) =
+let createMandelbrot (scale, mx, my, iter) =
     let image = new Bitmap(400, 400)
     for x = 0 to image.Width - 1 do
         for y = 0 to image.Height - 1 do
-            let count = isInMandelbrotSet( Complex.Zero, (mapPlane (x, y, s, mx, my)), iter, 0)
+            let count = isInMandelbrotSet( Complex.Zero, (mapPlane (x, y, scale, mx, my)), iter, 0)
             if count = iter then
                 image.SetPixel(x,y, Color.Black)
             else
